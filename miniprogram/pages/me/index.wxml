@@ -1,0 +1,49 @@
+<view class="page" style="padding-top: {{ paddingTop }}px;">
+    <view class="user-section">
+        <image class="user-section__avatar" src="../../assets/image/me-avatar.png" bindtap="gotoSettings"></image>
+        <block wx:if="{{ !token }}">
+            <view class="user-section__info" wx:if="{{ !token }}">登录获取更多权益</view>
+            <van-button type="primary" size="small" bindtap="gotoLogin">授权登录</van-button>
+        </block>
+        <view class="user-section__info" wx:if="{{ token }}">{{ userInfo.phone }}</view>
+    </view>
+
+    <view class="info-card-section">
+        <view class="info-card">
+            <view class="meta">
+                <view class="number" wx:if="{{ !token }}">***</view>
+                <view class="number" wx:if="{{ token }}">{{ userInfo.points }}</view>
+                <view class="unit">积分</view>
+            </view>
+            <image class="icon" src="../../assets/image/me-coin.png"></image>
+        </view>
+
+        <view class="info-card">
+            <view class="meta">
+                <view class="number" wx:if="{{ !token }}">***</view>
+                <view class="number" wx:if="{{ token }}">{{ userInfo.discountCoupon }}</view>
+                <view class="unit">优惠券</view>
+            </view>
+            <image class="icon" src="../../assets/image/me-coin.png"></image>
+        </view>
+    </view>
+
+    <view class="menu-section">
+        <van-cell-group>
+            <van-cell icon="qr" title="兑换码" is-link border="{{ false }}" />
+            <van-cell icon="shield-o" title="隐私协议" is-link border="{{ false }}" />
+            <van-cell icon="records" title="用户服务协议" is-link border="{{ false }}" />
+            <van-cell icon="notes-o" title="经营信息公示" is-link border="{{ false }}" />
+        </van-cell-group>
+    </view>
+
+    <view class="menu-section">
+        <van-cell-group>
+            <van-cell icon="down" title="下载体验APP" is-link border="{{ false }}" />
+        </van-cell-group>
+    </view>
+
+    <view class="version">
+        版本号1.0.0
+    </view>
+</view>

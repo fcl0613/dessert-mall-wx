@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="header-section">
+        <image class="avatar" src="../../assets/image/me-avatar.png"></image>
+    </view>
+
+    <view class="form-section">
+        <van-field label="手机" value="{{ settingInfo.phone }}" disabled>
+            <van-button slot="button" size="small" open-type="getPhoneNumber" bindgetphonenumber="getNewPhone">修改</van-button>
+        </van-field>
+        <view class="sex-area">
+            性别
+            <radio-group bindchange="changeSex">
+                <radio value="0" checked="{{ settingInfo.sex === 0 ? true : false }}">男</radio>
+                <radio value="1" checked="{{ settingInfo.sex === 1 ? true : false }}">女</radio>
+            </radio-group>
+        </view>
+        <view class="sub-btn">
+            <van-button slot="button" type="danger" block bindtap="updateInfo">修改</van-button>
+        </view>
+    </view>
+
+    <view class="logout-btn" bindtap="logout">
+        退出登录
+    </view>
+</view>

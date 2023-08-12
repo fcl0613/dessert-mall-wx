@@ -1,0 +1,100 @@
+.page {
+
+    .tip {
+        margin-top: 20rpx;
+    }
+
+    .menu-list {
+        height: 100%;
+        overflow: hidden;
+
+        .section {
+            position: relative;
+            padding: 38rpx;
+            margin-bottom: 20rpx;
+
+            .section-content {
+                .goods-card {
+                    display: flex;
+                    gap: 20rpx;
+                    margin-bottom: 20rpx;
+
+                    .goods-pic {
+                        width: 150rpx;
+                        height: 160rpx;
+                    }
+
+                    .goods-info {
+                        flex: 1;
+                        height: 160rpx;
+
+                        .goods-name {
+                            font-size: 30rpx;
+                            font-weight: bold;
+                            margin-bottom: 18rpx;
+                        }
+
+                        .description {
+                            margin-bottom: 20rpx;
+                            font-size: 24rpx;
+                            color: #909090;
+                        }
+
+                        .bottom-section {
+                            display: flex;
+                            justify-content: space-between;
+
+                            .price {
+                                font-size: 30rpx;
+                                color: red;
+                                display: flex;
+                                font-weight: bold;
+                                gap: 4rpx;
+                                align-items: baseline;
+
+                                &::before {
+                                    content: '￥';
+                                    font-size: 24rpx;
+                                }
+                            }
+
+                            .right {
+                                .stepper-my {
+                                    width: 160rpx;
+                                    height: 44rpx;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    .stepper-plus {
+                                        width: 44rpx;
+                                        height: 44rpx;
+                                        background-color: red;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        border-radius: 50%;
+                                        color: #fff;
+                                    }
+                                    .stepper-minus {
+                                        width: 44rpx;
+                                        height: 44rpx;
+                                        background-color: red;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        border-radius: 50%;
+                                        color: #fff;
+                                        .minus {
+                                            padding-bottom: 6rpx;
+                                            font-size: 20rpx;
+                                            font-weight: bold;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

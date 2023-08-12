@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-button": "vant-weapp/button"
+  },
+  "navigationStyle": "default",
+  "navigationBarTitleText": "登录"
+}

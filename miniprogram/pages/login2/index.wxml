@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="container">
+        <view class="title">用户登录</view>
+        <view class="form-area">
+            <form bindsubmit="onSubmit" bindreset="resetData">
+                <input type="text" name="username" placeholder="请输入用户名" />
+                <input type="password" name="password" placeholder="请输入密码" />
+                <view class="btn-area">
+                    <button class="sub-btn" form-type="submit">登录</button>
+                    <button class="resset-btn" form-type="reset">重置</button>
+                </view>
+            </form>
+        </view>
+    </view>
+</view>

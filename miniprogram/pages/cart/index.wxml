@@ -1,0 +1,39 @@
+<view class="page">
+    <view class="tip" wx:if="{{ cartList.list.length === 0 }}" bindtap="toStore">购物车空空如也~去看看吧</view>
+    <scroll-view wx:if="{{ cartList.list.length > 0 }}" class="menu-list" scroll-y >
+        <view class="section">
+            <view class="section-content">
+                <view class="goods-card" wx:for="{{ cartList.list }}" wx:key="unique">
+                    <image class="goods-pic" src="{{ baseGoodsImgUrl + item.goodsPic }}"></image>
+                    <view class="goods-info">
+                        <view class="goods-name">{{ item.goodsName }}</view>
+                        <view class="description"></view>
+                        <view class="bottom-section">
+                            <view class="price">
+                                {{ item.goodsPrice }}
+                            </view>
+
+
+                            <view class="right">
+                                <view class="stepper-my" wx:if="{{ item.goodsCount }}">
+                                    <view class="stepper-minus" bindtap="minusEvent" data-cart="{{ item }}">
+                                        <view class="minus">—</view>   
+                                    </view>
+                                    <view>{{ item.goodsCount }}</view>
+                                    <view class="stepper-plus" bindtap="plusEvent" data-cart="{{ item }}">
+                                        <van-icon name="plus" />
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <van-submit-bar
+  price="{{ cartList.totalPrice * 100 }}"
+  button-text="提交订单"
+  bind:submit="onSubmit"
+/>
+</view>

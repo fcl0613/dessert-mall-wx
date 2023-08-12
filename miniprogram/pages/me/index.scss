@@ -1,0 +1,58 @@
+.page {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, #fbe7e6 30%, #fbfbfb 50%);
+    padding: 0 30rpx;
+    .user-section {
+        width: 100%;
+        padding: 20rpx 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__avatar {
+            width: 120rpx;
+            height: 120rpx;
+            border-radius: 50%;
+        }
+        &__info {
+            flex: 1;
+            margin-left: 20rpx;
+            font-size: 26rpx;
+        }
+
+    
+    }
+    .info-card-section {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .info-card {
+            width: 332rpx;
+            padding: 20rpx 24rpx;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10rpx;
+            .meta {
+                font-size: 26rpx;
+                .number {
+                    font-weight: bold;
+                    margin-bottom: 20rpx;
+                }
+            }
+            .icon {
+                width: 72rpx;
+                height: 72rpx;
+            }
+        }
+    }
+    .menu-section {
+        margin-top: 20rpx;
+        width: 100%;
+    }
+    .version {
+        margin-top: 10rpx;
+        font-size: 24rpx;
+    }
+}

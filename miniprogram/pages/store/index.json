@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-tab": "vant-weapp/tab",
+    "van-tabs": "vant-weapp/tabs",
+    "van-search": "vant-weapp/search",
+    "van-icon": "vant-weapp/icon",
+    "van-tag": "vant-weapp/tag",
+    "van-loading": "vant-weapp/loading",
+    "a-store-pop": "../../components/a-store-pop/index"
+  },
+  "navigationBarTitleText": "门店列表",
+  "navigationStyle": "default"
+}

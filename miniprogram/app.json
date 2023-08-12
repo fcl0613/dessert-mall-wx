@@ -1,0 +1,43 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/store/index",
+        "pages/store/menu",
+        "pages/order/index",
+        "pages/me/index",
+        "pages/login/index",
+        "pages/login2/index",
+        "pages/me/settings",
+        "pages/cart/index"
+    ],
+    "tabBar": {
+        "custom": true,
+        "list": [
+            {
+                "pagePath": "pages/index/index"
+            },
+            {
+                "pagePath": "pages/store/index"
+            },
+            {
+                "pagePath": "pages/order/index"
+            },
+            {
+                "pagePath": "pages/me/index"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "desert-mall",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+    },
+    "sitemapLocation": "sitemap.json",
+    "permission": {
+        "scope.userLocation": {
+            "desc": "您的位置将用于匹配最佳门店"
+        }
+    }
+}

@@ -1,0 +1,46 @@
+<view class="menu-content">
+    <view class="sidebar">
+        <view class="item {{ selectedSectionIndex === index && 'item--active' }}" wx:for="{{ menuList }}" wx:key="unique" bindtap="onSelect" data-index="{{ index }}">
+            <image class="icon" src="{{ baseCategoryImgUrl + item.categoryIcon }}"></image>
+            <view class="title">{{ item.categoryName }}</view>
+        </view>
+    </view>
+
+    <scroll-view class="menu-list" scroll-y scroll-into-view="section-title-{{ scrollIntoIndex }}" scroll-with-animation bindscroll="onScroll">
+        <view class="section" wx:for="{{ menuList }}" wx:key="unique">
+            <view class="section-title {{ selectedSectionIndex === index && 'section-title--sticky' }}" id="section-title-{{ index }}">{{ item.categoryName }}</view>
+            <view class="section-content">
+                <view class="goods-card" wx:for="{{ item.goodsList }}" wx:key="unique">
+                    <image class="goods-pic" src="{{ baseGoodsImgUrl + item.goodsPic }}"></image>
+                    <view class="goods-info">
+                        <view class="goods-name">{{ item.goodsName }}</view>
+                        <view class="description">{{ item.goodsDescription }}</view>
+                        <view class="bottom-section">
+                            <view class="price">
+                                {{ item.goodsPrice }}
+                            </view>
+
+
+                            <view class="right">
+                                <view class="add-btn" wx:if="{{ item.goodsStock !== 0 && !item.goodsCount }}" bindtap="addEvent" data-goods="{{ item }}">
+                                    <van-icon wx:if="{{ !item.goodsCount }}" name="plus" />
+                                </view>
+                                <view wx:if="{{ item.goodsStock === 0 }}">已售罄</view>
+
+                                <view class="stepper-my" wx:if="{{ item.goodsCount }}">
+                                    <view class="stepper-minus" bindtap="minusEvent" data-goods="{{ item }}">
+                                        <view class="minus">—</view>   
+                                    </view>
+                                    <view>{{ item.goodsCount }}</view>
+                                    <view class="stepper-plus" bindtap="plusEvent" data-goods="{{ item }}">
+                                        <van-icon name="plus" />
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

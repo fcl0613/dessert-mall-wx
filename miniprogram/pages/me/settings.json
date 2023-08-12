@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-field": "vant-weapp/field",
+    "van-button": "vant-weapp/button",
+    "van-radio": "vant-weapp/radio",
+    "van-radio-group": "vant-weapp/radio-group"
+  },
+  "navigationBarTitleText": "个人资料",
+  "navigationStyle": "default"
+}

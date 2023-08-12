@@ -1,0 +1,39 @@
+<view class="page">
+    <view class="header-section">
+        <van-tabs class="van-tab" active="{{ active }}" bind:change="onChange">
+            <van-tab title="附近门店"></van-tab>
+            <!-- <van-tab title="常去门店"></van-tab> -->
+        </van-tabs>
+        <van-search value="{{ keyword }}" placeholder="搜索门店" shape="round" bind:search="onSearch" bind:clear="reset"/>
+    </view>
+    <view class="map-section">
+        <map id="store-map" class="map {{ showMap || 'map--hidden' }}" show-location latitude="{{ currentLocation.latitude }}" longitude="{{ currentLocation.longitude }}" markers="{{ markers }}">
+            <image class="map__current-icon" src="../../assets/image/current.png" bindtap="backCurrent"></image>
+        </map>
+        <view class="toggle-map" bindtap="toggleMap">
+            {{ showMap ? '收起地图' : '展开地图' }}
+            <van-icon style="margin-left: 12rpx;" name="{{ showMap ? 'arrow-up' : 'arrow-down' }}" />
+        </view>
+    </view>
+    <view class="store-list-section">
+        <view class="store-card" wx:for="{{ storeList }}" wx:key="unique" bindtap="selectStore" data-store= "{{ item }}">
+            <view class="store-card-meta">
+                <view class="name">{{ item.storeName }}</view>
+                <view class="address">{{ item.storeAddress }}</view>
+                <view class="opening-time">营业时间：{{ item.openingTime }}</view>
+                <van-tag type="danger">{{ item.status }}</van-tag>
+            </view>
+            <view class="store-card-action">
+                <view class="distance">
+                    距离{{ item.distance }}km
+                </view>
+                <view class="action-icon-list">
+                    <van-icon name="location" bindtap="gotoLocation" data-longitude="{{ item.longitude }}" data-latitude="{{ item.latitude }}" />
+                    <van-icon name="phone" bindtap="callPhone" data-phone="{{ item.phone }}"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-loading wx:if="{{ storeList.length < 1 }}" class="loading" type="spinner" />
+    <a-store-pop store="{{ selectStore }}" markers="{{ markers }}" bind:close="handlePopClose"></a-store-pop>
+</view>

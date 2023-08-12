@@ -1,0 +1,27 @@
+<view class="page">
+    <f-swiper list="{{ bannerList }}"></f-swiper>
+
+    <view class="number-card">
+        <image src="../../assets/image/me-avatar.png"></image>
+        <view class="number-card__info" >
+            <text class="title" wx:if="{{ token }}">{{ indexInfo.username }}</text>
+        </view>
+        <view wx:if="{{ token }}" class="number-card__coin">
+            <image src="../../assets/image/me-coin.png"></image>
+            <!-- 积分 -->
+            <text>{{ indexInfo.points }}</text>
+        </view>
+
+        <view class="number-card__button">
+            <van-button wx:if="{{ !token }}" class="my-van-button" size="small" type="danger" bindtap="goToLogin">登录授权</van-button>
+        </view>
+    </view>
+
+    <view class="menu-card" bindtap="goToMenu">
+        <image src="../../assets/image/menu-banner.jpg"></image>
+    </view>
+
+    <view class="icon-navigations">
+        <image class="icon-navigations__item" wx:for="{{ navigationList }}" wx:key="unique" src="{{ item.image }}" data-item="{{ item }}" bindtap="onItemTap"></image>
+    </view>
+</view>

@@ -1,0 +1,20 @@
+<van-popup show="{{ store }}" position="bottom" bind:close="onClose">
+    <view class="store-detail">
+        <van-notice-bar left-icon="volume-o"
+            text="我们的门店很多千万不要选错哦！"
+        />
+        <view class="store-detail__content">
+            <view class="header">
+                <view class="meta">
+                    <view class="title">{{ store.storeName }}</view>
+                    <view class="address">{{ store.storeAddress }}</view>
+                </view>
+                <view class="location">
+                    距离 {{ store.distance }} km
+                </view>
+            </view>
+            <map class="map" latitude="{{ store.latitude }}" longitude="{{ store.longitude }}" markers="{{ markers }}"></map>
+            <van-button type="danger" block bindtap="toToMenu">进入菜单</van-button>
+        </view>
+    </view>
+</van-popup>

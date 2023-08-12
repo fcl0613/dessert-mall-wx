@@ -1,0 +1,102 @@
+.page {
+    padding-bottom: calc(90rpx + env(safe-area-inset-buttom));
+    .header-section {
+        width: 100%;
+        height: 110rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 0 22rpx;
+        .van-tab {
+            width: 320rpx;
+            height: 80rpx;
+        }
+    }
+    .map-section {
+        width: 100%;
+        .map {
+            width: 100%;
+            height: 520rpx;
+            transition: 0.3s;
+            position: relative;
+            &--hidden {
+                height: 0;
+                opacity: 0;
+            }
+            &__current-icon {
+                position: absolute;
+                width: 50rpx;
+                height: 50rpx;
+                right: 20rpx;
+                bottom: 30rpx;
+            }
+        }
+        .toggle-map {
+            width: 100%;
+            height: 70rpx;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22rpx;
+        }
+    }
+    .store-list-section {
+        width: 100%;
+        padding: 20rpx 24rpx;
+        .store-card {
+            background-color: #fff;
+            border-radius: 10rpx;
+            padding: 20rpx;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10rpx;
+            .store-card-meta {
+                flex: 1;
+                line-height: 30rpx;
+                .name {
+                    font-size: 30rpx;
+                    font-weight: bold;
+                }
+                .address, .opening-time {
+                    font-size: 22rpx;
+                    color: #949494;
+                }
+            }
+            .store-card-action {
+                width: 180rpx;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                border-left: 1rpx solid #f1f1f1;
+                .distance {
+                    font-size: 20rpx;
+                    color: #949494;
+                }
+                .action-icon-list {
+                    width: 110rpx;
+                    display: flex;
+                    justify-content: space-evenly;
+                    van-icon {
+                        width: 44rpx;
+                        height: 44rpx;
+                        background-color: #ffeaee;
+                        color: #f52626;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

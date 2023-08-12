@@ -1,0 +1,26 @@
+<view class="page">
+    <van-nav-bar custom-class="navigation-bar">
+        <view class="left" slot="left">
+            <van-icon custom-class="icon" name="arrow-left" bindtap="returnPage" />
+            <van-search custom-class="search" value="{{ value }}" placeholder="请输入商品" />
+        </view>
+    </van-nav-bar>
+    <view class="header">
+        <view class="store-info">
+            <view class="name">{{ storeName }}</view>
+            <view class="distance">距离您 {{ distance }} km</view>
+        </view>
+    </view>
+
+    <a-store-menu class="store-menu" wx:if="{{ menuList.length }}" menuList="{{ menuList }}" bind:computeTotalPlus="computeTotalPlus" bind:computeTotalMinus="computeTotalMinus"></a-store-menu>
+
+    <!-- 购物车 -->
+    <view class="cart">
+        <van-icon custom-class="cart__icon" info="{{ totalCount }}" size="40px" name="shopping-cart-o"></van-icon>
+        <view class="cart__total-price">
+            合计 
+            <view class="price">{{ totalPrice }}</view>
+        </view>
+        <van-button type="danger" bindtap="toCart">结算</van-button>
+    </view>
+</view>
